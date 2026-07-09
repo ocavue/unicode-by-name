@@ -2,8 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unicode-by-name?color=a1b858&label=)](https://www.npmjs.com/package/unicode-by-name)
 
-Named constants for special Unicode characters, so you never have to paste an
-invisible character into your source code again.
+Named constants for special Unicode characters, so you never have to paste an invisible character into your source code again.
 
 ## Installation
 
@@ -14,15 +13,10 @@ npm install unicode-by-name
 ## Usage
 
 ```ts
-import {
-  LEFT_BLACK_LENTICULAR_BRACKET,
-  OBJECT_REPLACEMENT_CHARACTER,
-  ZERO_WIDTH_SPACE,
-} from 'unicode-by-name'
+import { OBJECT_REPLACEMENT_CHARACTER, ZERO_WIDTH_SPACE } from 'unicode-by-name'
 ```
 
-Every character is an independent `const`, and the package is marked
-side-effect-free, so your bundler drops the ones you do not import.
+Every character is an independent `const`, and the package is marked side-effect-free, so your bundler drops the ones you do not import.
 
 Note: `unicode-by-name` is supposed to be used in build scripts (i.e. as a `devDependency`), and not at runtime (i.e. as a `dependency`).
 
