@@ -1,5 +1,5 @@
 {
-  "name": "unicode-characters",
+  "name": "unicode-by-name",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@11.10.0",
@@ -7,12 +7,12 @@
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/unicode-characters#readme",
+  "homepage": "https://github.com/ocavue/unicode-by-name#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ocavue/unicode-characters.git"
+    "url": "https://github.com/ocavue/unicode-by-name.git"
   },
-  "bugs": "https://github.com/ocavue/unicode-characters/issues",
+  "bugs": "https://github.com/ocavue/unicode-by-name/issues",
   "keywords": [
     "unicode",
     "characters"
