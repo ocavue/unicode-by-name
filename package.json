@@ -1,0 +1,43 @@
+{
+  "name": "unicode-characters",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@11.10.0",
+  "description": "A list of special Unicode characters",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/unicode-characters#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ocavue/unicode-characters.git"
+  },
+  "bugs": "https://github.com/ocavue/unicode-characters/issues",
+  "keywords": [
+    "unicode",
+    "characters"
+  ],
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "gen": "node scripts/generate.ts"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/unicode-name": "1.1.0",
+    "typescript": "^7.0.0",
+    "unicode-name": "1.1.0"
+  }
+}
