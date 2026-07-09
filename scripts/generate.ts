@@ -25,6 +25,9 @@ const CODE_POINTS: Array<[number, number]> = [
   [0x2700, 0x27BF],
   // Miscellaneous Mathematical Symbols-A
   [0x27C0, 0x27EF],
+  // The bracket run of CJK Symbols and Punctuation. Not a whole block: the rest
+  // of it is kana marks, iteration marks, and CJK-specific punctuation.
+  [0x3008, 0x301B],
   // Zero width no-break space. Not a whole block: it is the last code point of
   // Arabic Presentation Forms-B, and we do not want the other 143.
   [0xFEFF, 0xFEFF],
