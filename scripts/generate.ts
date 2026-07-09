@@ -4,25 +4,44 @@ import { join } from 'node:path'
 import { unicodeName, unicodeType } from 'unicode-name'
 
 /**
- * The characters to export, as inclusive `[start, end]` code point ranges.
+ * The characters to export, as inclusive `[start, end]` code point ranges,
+ * sorted ascending and non-overlapping.
  *
- * Each range is an official Unicode block, sorted ascending and non-overlapping.
+ * These are the characters worth referring to by name: punctuation, brackets,
+ * box drawing, block elements, and the invisible formatting characters. Ranges
+ * are trimmed to that purpose rather than following block boundaries, because
+ * most Unicode blocks mix such characters with ones nobody writes a constant
+ * for. Deliberately excluded:
+ *
+ * - Letters outside ASCII. You type `é` directly; you never reach for
+ *   `LATIN_SMALL_LETTER_E_WITH_ACUTE`.
+ * - Pictographs and emoji, such as `WATCH`, `AIRPLANE`, and `RAISED_FIST`.
+ * - APL functional symbols, which are an entire programming language's operator
+ *   set living inside Miscellaneous Technical.
  */
 const CODE_POINTS: Array<[number, number]> = [
-  // Basic Latin
+  // Basic Latin, printable range.
   [0x0020, 0x007E],
-  // Latin-1 Supplement
-  [0x0080, 0x00FF],
+  // Latin-1 Supplement, up to the last symbol. Everything above U+00BF is an
+  // accented letter, apart from the multiplication and division signs.
+  [0x00A0, 0x00BF],
   // General Punctuation
   [0x2000, 0x206F],
-  // Miscellaneous Technical
-  [0x2300, 0x23FF],
+  // Miscellaneous Technical: the bracket, brace, and summation pieces used to
+  // build tall delimiters, through the horizontal scan lines. Skips the APL
+  // operators below and the dentistry and clock symbols above.
+  [0x239B, 0x23BD],
+  // Miscellaneous Technical: the media control triangles.
+  [0x23F4, 0x23F7],
   // Box Drawing
   [0x2500, 0x257F],
   // Block Elements
   [0x2580, 0x259F],
-  // Dingbats
-  [0x2700, 0x27BF],
+  // Dingbats: the vertical bars and quotation mark ornaments. Stops before the
+  // hearts and floral ornaments.
+  [0x2758, 0x2760],
+  // Dingbats: the bracket ornaments through the circled digits.
+  [0x2768, 0x2793],
   // Miscellaneous Mathematical Symbols-A
   [0x27C0, 0x27EF],
   // The bracket run of CJK Symbols and Punctuation. Not a whole block: the rest
