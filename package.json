@@ -1,7 +1,7 @@
 {
   "name": "unicode-by-name",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@11.10.0",
   "description": "A list of special Unicode characters",
   "author": "ocavue <ocavue@gmail.com>",
